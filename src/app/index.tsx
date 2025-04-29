@@ -58,7 +58,7 @@ export default function index() {
                 <Text style={[styles.title, { marginBottom: 20 }]}>ao seu assistente <Text style={{color: '#E5C07B'}}>Ordis!</Text></Text>
             </ImageBackground>
             <SafeAreaView>
-                <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário (CPF)"></MaskedTextInput>
+                <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário"></MaskedTextInput>
                 <TextInput secureTextEntry={!showPassword} onChangeText={(password) => setPassword(password)} style={styles.inputUser} placeholder="Senha">
                 </TextInput>
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>

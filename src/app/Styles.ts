@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         backgroundColor: "#F8F8F2",
     },
     titleContainer: {
-        paddingTop: 50,
+        paddingTop: 60,
         width: '100%',
         height: 120,
         justifyContent: 'center',
