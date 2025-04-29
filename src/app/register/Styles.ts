@@ -5,7 +5,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#f5fcff",
+        backgroundColor: "#F8F8F2",
+    },
+    titleContainer: {
+        paddingTop: 30,
+        width: '100%',
+        height: 120,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     title: {
         fontSize: 20,

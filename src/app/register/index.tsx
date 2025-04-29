@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, TextInput, TouchableOpacity } from "react-native";
+import { SafeAreaView, Text, TextInput, TouchableOpacity, ImageBackground } from "react-native";
 import React, { useState } from "react";
 import { MaskedTextInput } from 'react-native-mask-text';
 import Button from "@/components/button";
@@ -12,7 +12,9 @@ export default function register() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Registrar</Text>
+            <ImageBackground style={styles.titleContainer} source={require("../../../assets/images/warframe-logo.png")} resizeMode="center">
+                <Text style={styles.title}>Registrar</Text>
+            </ImageBackground>
 
             <SafeAreaView style={styles.formFields}>
                 <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário (CPF)"/>
