@@ -17,7 +17,7 @@ export default function register() {
             </ImageBackground>
 
             <SafeAreaView style={styles.formFields}>
-                <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário (CPF)"/>
+                <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário"/>
                 <TextInput secureTextEntry={!showPassword} onChangeText={(password) => setPassword(password)} style={styles.inputUser} placeholder="Senha"/>
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
                     <Text style={{ color: 'blue' }}>Mostrar senha</Text>
