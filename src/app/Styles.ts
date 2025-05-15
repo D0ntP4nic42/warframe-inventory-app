@@ -1,23 +1,24 @@
 import { StyleSheet } from "react-native"
+import  colors  from "@/components/utils/colors"
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#F8F8F2",
+        backgroundColor: colors.background,
     },
     titleContainer: {
-        paddingTop: 60,
+        paddingTop: 5,
         width: '100%',
         height: 120,
         justifyContent: 'center',
         alignItems: 'center',
     },
     title: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: "bold",
-        color: "#333333"
+        color: colors.textPrimary,
     },
     formFields: {
         gap: 10
@@ -26,7 +27,7 @@ export const styles = StyleSheet.create({
         height: 40,
         width: 300,
         borderRadius: 10,
-        borderColor: "gray",
+        borderColor: colors.surface,
         borderWidth: 1,
         marginTop: 20
     }

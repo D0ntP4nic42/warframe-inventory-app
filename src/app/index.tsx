@@ -1,21 +1,23 @@
 import Button from "@/components/button";
+import colors from "@/components/utils/colors";
 import TokenStorage from "@/components/utils/tokenUtils";
 import { router } from "expo-router";
 import { useState } from "react";
-import { SafeAreaView, Text, TextInput, TouchableOpacity, ImageBackground } from "react-native";
-import { MaskedTextInput } from 'react-native-mask-text';
+import { ImageBackground, SafeAreaView, Text, TextInput, TouchableOpacity } from "react-native";
 import Toast from 'react-native-toast-message';
 import { styles } from "./Styles";
+import Constants from "expo-constants";
+
 
 export default function index() {
     async function handleLogin() {
         const credenciais = {
-            cpf: username,
+            emailOuUsername: username,
             senha: password
         };
 
         try {
-            await fetch(`http://192.168.0.5:8080/auth/login`, {
+            await fetch(`http://192.168.0.2:8080/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -53,16 +55,16 @@ export default function index() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ImageBackground style={styles.titleContainer} source={require("../../assets/images/warframe-logo.png")} resizeMode="center">
+            <ImageBackground style={[styles.titleContainer, { width: 300, height: 200, }]} source={require("../../assets/images/warframe-logo.png")} resizeMode="contain">
                 <Text style={styles.title}>Bem-vindo</Text>
-                <Text style={[styles.title, { marginBottom: 20 }]}>ao seu assistente <Text style={{color: '#E5C07B'}}>Ordis!</Text></Text>
+                <Text style={[styles.title, { marginBottom: 20 }]}>ao seu assistente <Text style={{ color: colors.primary }}>Ordis!</Text></Text>
             </ImageBackground>
             <SafeAreaView>
-                <MaskedTextInput mask="999.999.999-99" keyboardType="number-pad" onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Nome de usuário"></MaskedTextInput>
+                <TextInput onChangeText={(username) => setUsername(username)} style={styles.inputUser} placeholder="Email/Nome de usuário"></TextInput>
                 <TextInput secureTextEntry={!showPassword} onChangeText={(password) => setPassword(password)} style={styles.inputUser} placeholder="Senha">
                 </TextInput>
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-                    <Text style={{ color: '#283593' }}>Mostrar senha</Text>
+                    <Text style={{ color: colors.accent }}>Mostrar senha</Text>
                 </TouchableOpacity>
             </SafeAreaView>
 
@@ -70,7 +72,7 @@ export default function index() {
             <TouchableOpacity onPress={() => router.navigate("/register")}>
                 <Text style={{ marginTop: 20 }}>
                     Ainda não tem uma conta?
-                    <Text style={{ color: '#283593' }}> Cadastre-se</Text>
+                    <Text style={{ color: colors.accent }}> Cadastre-se</Text>
                 </Text>
             </TouchableOpacity>
             <Toast />
